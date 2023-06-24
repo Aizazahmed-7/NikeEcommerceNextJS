@@ -8,7 +8,7 @@ import Link from "next/link";
 async function getLatestProducts() {
 
   try {
-    const res = await fetch('http://localhost:5001/api/products/getLatestProducts',{ next : {tags : ['HomePage']} })
+    const res = await fetch('https://nikebackend.vercel.app/api/products/getLatestProducts',{ next : {tags : ['HomePage']} })
     const data = await res.json()
     return data
 

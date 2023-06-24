@@ -43,7 +43,7 @@ const Admin = () => {
       formData.append("file", file);
   }
 try {
-    const {data} = await axios.post(`http://localhost:5001/api/products/createProduct`, formData , {
+    const {data} = await axios.post(`https://nikebackend.vercel.app/api/products/createProduct`, formData , {
       headers: {
         "Content-Type": "multipart/form-data",
       },

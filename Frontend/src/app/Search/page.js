@@ -38,7 +38,7 @@ export default function Shoes ({searchParams}){
         
         const fetchProducts = async ()=>{
             try {
-                const {data} = await axios.get(`http://localhost:5001/api/products/searchProduct?category=${category}&minPrice=${minPrice}&maxPrice=${maxPrice}&keyword=${keyword}`)
+                const {data} = await axios.get(`https://nikebackend.vercel.app/api/products/searchProduct?category=${category}&minPrice=${minPrice}&maxPrice=${maxPrice}&keyword=${keyword}`)
                 setProducts(data.products)
             } catch (error) {
                 setProducts(null)

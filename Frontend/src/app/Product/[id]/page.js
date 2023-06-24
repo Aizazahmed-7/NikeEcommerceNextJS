@@ -5,7 +5,7 @@ import AddToBagButton  from "../../Componets/AddToBagButton"
 
 async function getData(id){
     
-    const res = await fetch(`http://localhost:5001/api/products/getSingleProduct/${id}`)
+    const res = await fetch(`https://nikebackend.vercel.app/api/products/getSingleProduct/${id}`)
     const data = await res.json()
     return data
 }

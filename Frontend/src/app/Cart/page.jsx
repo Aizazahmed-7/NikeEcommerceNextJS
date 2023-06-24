@@ -42,7 +42,7 @@ const Cart = () => {
 
 
    try {
-     const {data} = await axios.post(`http://localhost:5001/api/payment/create-checkout-session`, {products:items} )
+     const {data} = await axios.post(`https://nikebackend.vercel.app/api/payment/create-checkout-session`, {products:items} )
      console.log(data) 
      window.location.replace(data.url)
 
