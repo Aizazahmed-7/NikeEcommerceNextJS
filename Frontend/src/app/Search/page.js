@@ -37,10 +37,9 @@ export default function Shoes ({searchParams}){
 
     useEffect(()=>{
         
-        console.log(BackEndUrl)
         const fetchProducts = async ()=>{
             try {
-                const {data} = await axios.get(`https://nikebackend.vercel.app/api/products/searchProduct?category=${category}&minPrice=${minPrice}&maxPrice=${maxPrice}&keyword=${keyword}`)
+                const {data} = await axios.get(`${BackEndUrl}/api/products/searchProduct?category=${category}&minPrice=${minPrice}&maxPrice=${maxPrice}&keyword=${keyword}`)
                 setProducts(data.products)
             } catch (error) {
                 setProducts(null)
@@ -128,7 +127,7 @@ export default function Shoes ({searchParams}){
                                         return (
                                             <div className="flex justify-center items-center md:items-start md:justify-start">
                                                 <Link href={`/Product/${item._id}`} key = {index} className="flex flex-col gap-3">
-                                                    <img src={item.images[0].url} className="h-72 w-72"></img>
+                                                    <img src={item.images[0].url} className={`md:h-72 object-cover md:w-72 ${hidefilters ? 'pl-16' : '' } `} ></img>
                                                     <div className="flex flex-col lg:text-start text-center">
                                                         <p className="text-orange-500">{item.stock > 0 ? 'AVAILABLE' : 'Out Of Stock'}</p>
                                                         <p className="font-bold">{item.name}</p>

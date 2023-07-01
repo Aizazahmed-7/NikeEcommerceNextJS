@@ -4,6 +4,7 @@ import {useState, useEffect } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
+import BackEndUrl from "@/utils/BacnkendUrl";
 
 const Cart = () => {
 
@@ -42,7 +43,7 @@ const Cart = () => {
 
 
    try {
-     const {data} = await axios.post(`https://nikebackend.vercel.app/api/payment/create-checkout-session`, {products:items} )
+     const {data} = await axios.post(`${BackEndUrl}/api/payment/create-checkout-session`, {products:items} )
      console.log(data) 
      window.location.replace(data.url)
 

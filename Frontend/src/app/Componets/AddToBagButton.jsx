@@ -17,7 +17,7 @@ const AddToBagButton = ({id,name,price,image,size}) => {
 
 
   return (<>
-    <button onClick={handleAddToBag} className="bg-black px-8 py-5 w-3/4 text-white rounded-full font-bold hover:bg-gray-600">Add to Bag</button>
+    <button onClick={handleAddToBag} className="bg-black px-8 py-5 md:w-3/4 w-full text-white rounded-full font-bold hover:bg-gray-600">Add to Bag</button>
     <ToastContainer />
   </>
   )

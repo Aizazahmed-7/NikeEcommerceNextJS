@@ -8,7 +8,7 @@ import BacnkendUrl from "@/utils/BacnkendUrl";
 async function getLatestProducts() {
 
   try {
-    const res = await fetch('https://nikebackend.vercel.app/api/products/getLatestProducts',{ next : {tags : ['HomePage']} })
+    const res = await fetch(`${BacnkendUrl}/api/products/getLatestProducts`,{ next : {tags : ['HomePage']} })
     const data = await res.json()
     return data
 

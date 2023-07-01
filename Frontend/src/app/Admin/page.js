@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
-
+import BackEndUrl from "@/utils/BacnkendUrl";
 
 
 const Admin = () => {
@@ -43,7 +43,7 @@ const Admin = () => {
       formData.append("file", file);
   }
 try {
-    const {data} = await axios.post(`https://nikebackend.vercel.app/api/products/createProduct`, formData , {
+    const {data} = await axios.post(`${BackEndUrl}/api/products/createProduct`, formData , {
       headers: {
         "Content-Type": "multipart/form-data",
       },

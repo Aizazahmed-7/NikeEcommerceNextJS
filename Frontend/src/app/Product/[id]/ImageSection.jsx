@@ -13,19 +13,19 @@ export const ImageSection = ({Images}) => {
 
   return (
     <section className="col-span-1 grid grid-cols-12">
-    <div className="ml-5 col-span-2 flex flex-col gap-2 mr-5">
+    <div className=" col-span-12 md:col-span-10">
+        <img src={mainImage} className="w-full h-full object-cover rounded-xl"></img>
+    </div>
+    <div className="md:ml-5  col-span-12 md:col-span-2 flex md:flex-col flex-row flex-wrap  md:flex-nowrap  mt-5 md:mt-0 gap-2 md:mr-5">
         {
             Images.map((imageUrl,index)=>{
                 return(
                     <div key={index} onMouseOver={()=>{changeMainImage(imageUrl.url)}} >
-                        <img  src={imageUrl.url} className={"w-20 h-20 rounded-xl" + " " + Styles.img}  ></img>
+                        <img  src={imageUrl.url} className={"w-20 h-20 object-cover rounded-xl" + " " + Styles.img}  ></img>
                     </div>
                 )
             })
         }
-    </div>
-    <div className=" col-span-10">
-        <img src={mainImage} className="w-full h-full rounded-xl"></img>
     </div>
 </section>
   )

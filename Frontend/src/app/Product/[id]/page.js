@@ -1,11 +1,12 @@
 import Script from 'next/script'
 import { ImageSection } from "./ImageSection"
 import AddToBagButton  from "../../Componets/AddToBagButton"
+import BackEndUrl from '@/utils/BacnkendUrl'
 
 
 async function getData(id){
     
-    const res = await fetch(`https://nikebackend.vercel.app/api/products/getSingleProduct/${id}`)
+    const res = await fetch(`${BackEndUrl}/api/products/getSingleProduct/${id}`)
     const data = await res.json()
     return data
 }
