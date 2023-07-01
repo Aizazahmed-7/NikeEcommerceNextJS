@@ -2,7 +2,7 @@ import "server-only"
 import Image from "next/image";
 import Carosel from "./Componets/carosel/Carosel";
 import Link from "next/link";
-
+import BacnkendUrl from "@/utils/BacnkendUrl";
 
 
 async function getLatestProducts() {

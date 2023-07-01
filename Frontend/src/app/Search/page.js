@@ -5,6 +5,7 @@ import Script from 'next/script'
 import { useState , useEffect } from "react"
 import axios from "axios"
 import { KeywordContext } from "../Componets/ContextApi/Keyword"
+import BackEndUrl from "@/utils/BacnkendUrl"
 
 
 
@@ -36,6 +37,7 @@ export default function Shoes ({searchParams}){
 
     useEffect(()=>{
         
+        console.log(BackEndUrl)
         const fetchProducts = async ()=>{
             try {
                 const {data} = await axios.get(`https://nikebackend.vercel.app/api/products/searchProduct?category=${category}&minPrice=${minPrice}&maxPrice=${maxPrice}&keyword=${keyword}`)
